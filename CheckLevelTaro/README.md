@@ -12,12 +12,12 @@ Many thanks to our fellow citizen that [publicly shares data from its meteo stat
 
 ## Usage
 + Create a Tasker Widget-v2 and place it on one of your Android desktops, and name it `CheckLevelTaroWidget`. Best if size is 5x1.
-+ Download `CheckLevelTaro.prj.xml` project file from this repository and import it in Tasker.
++ Download [`CheckLevelTaro.prj.xml`](CheckLevelTaro.prj.xml) project file from this repository and import it in Tasker.
 + Manually run `CheckLevelTaro` task in the tasks page to render the widget for the first time.
 
 Your widget will look like this:
 
-![CheckLevelTaroWidgetScreenshot]()
+<img src="CheckLevelTaroScreenshot.jpg" alt="CheckLevelTaroScreenshot" width="500"/>
 
 > [!IMPORTANT]
 > Edit AlarmON task, and make sure that `Music Play` action is pointing to an available `.mp3` file in your phone.
