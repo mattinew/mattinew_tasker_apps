@@ -1,6 +1,6 @@
 # CheckLevelTaro
 
-This project has been done to parse data from the web about the level of the local river Tarò in Meda-MB-Italy, and trigger an alarm when it get to a critical threshold, possibly resulting in floods.
+This project has been done to fetch data from the web about the level of the local river Tarò in Meda-MB-Italy, and trigger an alarm when it gets to a critical threshold, possibly resulting in floods.
 Main application is the activation during the night to wake up in case of emergencies (phone needs to be connected to the internet).
 
 Many thanks to our fellow citizen that [publicly shares data from its meteo station](https://www.stefanocolombo.com/public/meteo/webtaro.php).
@@ -13,7 +13,7 @@ Many thanks to our fellow citizen that [publicly shares data from its meteo stat
 ## Usage
 + Create a Tasker Widget-v2 and place it on one of your Android desktops, and name it `CheckLevelTaroWidget`. Best if size is 5x1.
 + Download [`CheckLevelTaro.prj.xml`](CheckLevelTaro.prj.xml) project file from this repository and import it in Tasker.
-+ Manually run `CheckLevelTaro` task in the tasks page to render the widget for the first time.
++ Manually run `CheckLevelTaro` task in Tasker/tasks page to render the widget for the first time.
 
 Your widget will look like this:
 
@@ -21,21 +21,21 @@ Your widget will look like this:
 
 The main part is composed by 3 stripes:
 + ![](https://placehold.co/15x15/F1B7C6/F1B7C6.png) Data fetched from web: river water level [m], time when data was last updated, date when data was last updated.
-+ ![](https://placehold.co/15x15/D1BCFD/D1BCFD.png) Data fetched from web: current rainfall, today rainfall, last 1h rainfall, last 24h rainfall (all [mm]).
++ ![](https://placehold.co/15x15/D1BCFD/D1BCFD.png) Data fetched from web: current rainfall [mm], today rainfall [mm], last 1h rainfall [mm], last 24h rainfall [mm].
 + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Water level threshold [m] currently set by the user to trigger the alarm (interactive: by clicking here you can set a new threshold value).
 
 On the left, there are 3 icons:
 + ![](https://material-icons.github.io/material-icons/svg/autorenew/outline.svg) - Refresh data manually.
-  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Always
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Always.
 + ![](https://material-icons.github.io/material-icons/svg/looks_5/outline.svg) - Enable automatic data fetching every 5 minutes.
-  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active
-  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive
-+ ![](https://material-icons.github.io/material-icons/svg/alarm/outline.svg) -  Enable audio alarm to trigger at maximum volume if current river level is higher tham threshold set, and if automatic data fetching is active.
-  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active
-  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active.
+  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive.
++ ![](https://material-icons.github.io/material-icons/svg/alarm/outline.svg) -  Enable audio alarm to trigger at maximum volume if current river level is higher than programmed threshold, and if automatic data fetching is active.
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active.
+  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive.
 
 > [!IMPORTANT]
-> Edit AlarmON task, and make sure that `Music Play` action is pointing to an available `.mp3` file in your phone.
+> Edit `AlarmON` task, and make sure that `Music Play` action is pointing to an available `.mp3` file in your phone.
 
 ## Developer notes
 This is my first Tasker application so it might not be perfect (but it works...).
