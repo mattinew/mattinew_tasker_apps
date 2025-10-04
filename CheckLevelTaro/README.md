@@ -19,5 +19,37 @@ Your widget will look like this:
 
 <img src="CheckLevelTaroScreenshot.jpg" alt="CheckLevelTaroScreenshot" width="500"/>
 
+The main part is composed by 3 stripes:
++ ![](https://placehold.co/15x15/F1B7C6/F1B7C6.png) Data fetched from web: river water level [m], time when data was last updated, date when data was last updated.
++ ![](https://placehold.co/15x15/D1BCFD/D1BCFD.png) Data fetched from web: current rainfall, today rainfall, last 1h rainfall, last 24h rainfall (all [mm]).
++ ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Water level threshold [m] currently set by the user to trigger the alarm (interactive: by clicking here you can set a new threshold value).
+
+On the left, there are 3 icons:
++ ![](https://material-icons.github.io/material-icons/svg/autorenew/outline.svg) - Refresh data manually.
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Always
++ ![](https://material-icons.github.io/material-icons/svg/looks_5/outline.svg) - Enable automatic data fetching every 5 minutes.
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active
+  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive
++ ![](https://material-icons.github.io/material-icons/svg/alarm/outline.svg) -  Enable audio alarm to trigger at maximum volume if current river level is higher tham threshold set, and if automatic data fetching is active.
+  + ![](https://placehold.co/15x15/B6083D/B6083D.png) Active
+  + ![](https://placehold.co/15x15/5F4D89/5F4D89.png) Inactive
+
 > [!IMPORTANT]
 > Edit AlarmON task, and make sure that `Music Play` action is pointing to an available `.mp3` file in your phone.
+
+## Developer notes
+This is my first Tasker application so it might not be perfect (but it works...).
+
+It is composed by:
++ 1 Profile:
+  + `CheckLevelTaro5minProfile`: every 5 min, it triggers the `CheckLevelTaro` task.
+    + Icon ![](https://material-icons.github.io/material-icons/svg/looks_5/outline.svg) toggles this profile to be enabled via the `ToggleThisProfile` task.
++ 6 Tasks:
++ 2 Scenes:
+  + `PopupInputTh`: new screen/popup that allows you to set a new threshold to be checked against river level. It shows up when you click on the third main stripe ![](https://placehold.co/15x15/5F4D89/5F4D89.png).
+  + `PopupAlarm`: new screen/popup that shows up whenever the river level crosses the programmed threshold. It features a text message that close the popup when clicked.
+    + Icon ![](https://material-icons.github.io/material-icons/svg/alarm/outline.svg) toggles this popup to be enabled.
++ 4 Variables:
+  + `%Enabled_data_var_col` and `%Enabled_alarm_var_col` to store icon colors respectively for ![](https://material-icons.github.io/material-icons/svg/looks_5/outline.svg) and ![](https://material-icons.github.io/material-icons/svg/alarm/outline.svg).
+  + `%Level_th` to store programmable threshold level.
+  + `%ToggleAlarm` to store if alarm is enabled or not (no need to do this for automatic data parsing, since the `%PENABLED`(profiles enabled) Tasker variable can be used).
