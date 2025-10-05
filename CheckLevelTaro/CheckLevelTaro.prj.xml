@@ -630,7 +630,7 @@ Can also be accessed as an array&lt;/_array_net.dinglisch.android.tasker.RELEVAN
 					<rhs></rhs>
 				</Condition>
 				<Condition sr="c2" ve="3">
-					<lhs>%P%PENABLED</lhs>
+					<lhs>%PENABLED</lhs>
 					<op>4</op>
 					<rhs>CheckLevel.*</rhs>
 				</Condition>
