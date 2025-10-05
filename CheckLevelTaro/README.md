@@ -45,6 +45,12 @@ It is composed by:
   + `CheckLevelTaro5minProfile`: every 5 min, it triggers the `CheckLevelTaro` task.
     + Icon ![](https://material-icons.github.io/material-icons/svg/looks_5/outline.svg) toggles this profile to be enabled via the `ToggleThisProfile` task.
 + 6 Tasks:
+  +  `CheckLevelTaro`:
+  +  `AlarmON`:
+  +  `AlarmOFF`:
+  +  `ToggleThisProfile`:
+  +  `ToggleAlarm`:
+  +  `SetThreshold`:
 + 2 Scenes:
   + `PopupInputTh`: new screen/popup that allows you to set a new threshold to be checked against river level. It shows up when you click on the third main stripe ![](https://placehold.co/15x15/5F4D89/5F4D89.png).
   + `PopupAlarm`: new screen/popup that shows up whenever the river level crosses the programmed threshold. It features a text message that close the popup when clicked.
